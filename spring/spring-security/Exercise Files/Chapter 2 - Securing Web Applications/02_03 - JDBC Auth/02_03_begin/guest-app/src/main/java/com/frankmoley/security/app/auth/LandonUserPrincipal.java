@@ -4,29 +4,20 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
 
-public class LandonUserPrincipal implements UserDetails{
-
+public class LandonUserPrincipal implements UserDetails {
     private User user;
-    private List<AuthGroup> authGroups;
 
-    public LandonUserPrincipal(User user, List<AuthGroup> authGroups){
+    public LandonUserPrincipal(User user) {
         super();
         this.user = user;
-        this.authGroups = authGroups;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (null == authGroups) {
-            return Collections.emptySet();
-        }
-        Set<SimpleGrantedAuthority> grantedAuthorities = new HashSet<>();
-        authGroups.forEach(group -> {
-            grantedAuthorities.add(new SimpleGrantedAuthority(group.getAuthGroup()));
-        });
-        return grantedAuthorities;
+        return Collections.singleton(new SimpleGrantedAuthority("USER"));
     }
 
     @Override

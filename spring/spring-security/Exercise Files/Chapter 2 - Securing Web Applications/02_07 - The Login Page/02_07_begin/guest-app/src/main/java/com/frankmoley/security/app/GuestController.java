@@ -30,8 +30,12 @@ public class GuestController {
 
     @GetMapping(value={"/", "/index"})
     public String getHomePage(Model model){
-
         return "index";
+    }
+
+    @GetMapping(value="/login")
+    public String getLoginPage(Model model) {
+        return "login";
     }
 
     @GetMapping(value="/guests")
