@@ -41,5 +41,5 @@ build/
 .idea/
 *.iml
 
-# Special for this course
-libraries/
+# NodeJS
+node_modules/
