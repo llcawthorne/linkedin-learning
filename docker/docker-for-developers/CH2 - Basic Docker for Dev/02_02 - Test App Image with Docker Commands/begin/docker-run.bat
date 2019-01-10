@@ -1,1 +1,0 @@
-docker run -it -v "C:/Users/Lewis/git/courses/linkedin-learning/docker/docker-for-developers/CH2 - Basic Docker for Dev/02_02 - Test App Image with Docker Commands/begin":/usr/src/app -v /usr/src/app/node_modules -p 3000:3000 --rm react-example
