@@ -1,0 +1,16 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "landon-hotel-jhipster",
+      "landon-hotel-room-svc"
+    ],
+    "directoryPath": "../",
+    "gatewayType": "zuul",
+    "monitoring": "elk",
+    "consoleOptions": [
+      "zipkin"
+    ],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "YzJiNTM4YjViNTgxYWU1NWJlMjYxYzhiMGEyNDc5NDVlNGVlYjk2ODRiNGI1ZjMyNjdhYjU0OWU3MmM3MmVkMTU1NzVmZTMzZTQ0MjUzMjM2MDE2MGFmNDhlMWFjOWE2ZmFmOA=="
+  }
+}

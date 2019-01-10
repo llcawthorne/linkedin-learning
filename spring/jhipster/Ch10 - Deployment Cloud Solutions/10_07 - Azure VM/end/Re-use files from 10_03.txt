@@ -1,0 +1,1 @@
+Deploying to Azure will use the exact same files as deploying to AWS so please re-use the exercise files from 10_03.

@@ -1,0 +1,1 @@
+java -jar jhipster-registry-4.0.6.war --security.user.password=admin --jhipster.security.authentication.jwt.base64-secret=NDA2NjllNDZkNjE0ZThmMTNiNGRiYjhkNzEwZjlhYjQ5NjE0N2I0MDc5ZjI5NzJmYzk5ZDM2OWRmNTYxY2ExMzlkZWY2NjU4NTU0MTFiZTYzYWQzNDg5YTQ0ZmQxZTY4NTUyNWQyN2E5ODE2ODY1MmRiYzU0OWJkZDQxMWViODM= --spring.cloud.config.server.native.search-locations=file:./central-config

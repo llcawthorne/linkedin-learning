@@ -1,0 +1,82 @@
+version: '2'
+services:
+    landonhotel-app:
+        image: landonhotel
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://landonhotel-postgresql:5432/landonhotel
+            - JHIPSTER_SLEEP=30
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+        ports:
+            - 8080:8080
+    landonhotel-postgresql:
+        image: postgres:9.6.5
+        environment:
+            - POSTGRES_USER=landonhotel
+            - POSTGRES_PASSWORD=
+    
+    reservationservice-app:
+        image: reservationservice
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://reservationservice-postgresql:5432/reservationservice
+            - JHIPSTER_SLEEP=30
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+    reservationservice-postgresql:
+        image: postgres:9.6.5
+        environment:
+            - POSTGRES_USER=reservationservice
+            - POSTGRES_PASSWORD=
+    
+    roomservice-app:
+        image: roomservice
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://roomservice-postgresql:5432/roomservice
+            - JHIPSTER_SLEEP=30
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+    roomservice-postgresql:
+        image: postgres:9.6.5
+        environment:
+            - POSTGRES_USER=roomservice
+            - POSTGRES_PASSWORD=
+    
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry
+
+    jhipster-elasticsearch:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-elasticsearch
+    jhipster-logstash:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-logstash
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-console:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-console
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-import-dashboards:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-import-dashboards
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-zipkin:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-zipkin
+        depends_on:
+            - jhipster-elasticsearch

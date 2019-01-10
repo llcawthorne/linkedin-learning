@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "landon-hotel-jhipster",
+      "landon-hotel-reservation-svc",
+      "landon-hotel-room-svc"
+    ],
+    "directoryPath": "../",
+    "gatewayType": "zuul",
+    "monitoring": "elk",
+    "consoleOptions": [
+      "zipkin"
+    ],
+    "serviceDiscoveryType": "eureka",
+    "adminPassword": "admin",
+    "jwtSecretKey": "33b8b76f0c760bf3eb5e45a71f955d1949dee20b"
+  }
+}

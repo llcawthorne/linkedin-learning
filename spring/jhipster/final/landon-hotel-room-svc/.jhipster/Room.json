@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "roomservice",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "roomNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20190108030847",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "room",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "roomservice"
+}

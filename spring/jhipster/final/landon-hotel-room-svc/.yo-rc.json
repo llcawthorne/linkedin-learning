@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.linkedin.landonhotel"
+    },
+    "jhipsterVersion": "5.7.2",
+    "applicationType": "microservice",
+    "baseName": "roomservice",
+    "packageName": "com.linkedin.landonhotel",
+    "packageFolder": "com/linkedin/landonhotel",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NDA2NjllNDZkNjE0ZThmMTNiNGRiYjhkNzEwZjlhYjQ5NjE0N2I0MDc5ZjI5NzJmYzk5ZDM2OWRmNTYxY2ExMzlkZWY2NjU4NTU0MTFiZTYzYWQzNDg5YTQ0ZmQxZTY4NTUyNWQyN2E5ODE2ODY1MmRiYzU0OWJkZDQxMWViODM=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
