@@ -17,8 +17,9 @@ module Lib
     , findWordInCellPrefix
     , cells2string
     ) where
- 
+
 import System.IO
+import System.Random
 import Data.List (isInfixOf, transpose)
 import Data.Maybe (catMaybes, listToMaybe)
 import qualified Data.Map as M
